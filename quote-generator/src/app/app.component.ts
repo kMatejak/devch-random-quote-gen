@@ -17,12 +17,16 @@ export class AppComponent implements OnInit {
 
   constructor(private quoteService: QuoteService) {}
 
-  ngOnInit(): void {
+  generateQuote() {
     this.quoteService.getQuote().subscribe((data: QuoteData) => {
       this.quote = data.quote;
       this.text = this.quote.quoteText;
       this.author = this.quote.quoteAuthor;
       this.genre = this.quote.quoteGenre;
     });
+  }
+
+  ngOnInit(): void {
+    this.generateQuote();
   }
 }
