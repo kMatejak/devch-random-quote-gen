@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TakenQuoteData } from '../quote';
+import { QuoteData } from '../quote';
 import { QuoteService } from './quote.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { QuoteService } from './quote.service';
 })
 export class AppComponent implements OnInit {
   public title = 'Random Quote Generator';
-  public quote: TakenQuoteData['quote'];
+  public quote: QuoteData['quote'];
   public text: string;
   public author: string;
   public genre: string;
@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   constructor(private quoteService: QuoteService) {}
 
   ngOnInit(): void {
-    this.quoteService.getQuote().subscribe((data: TakenQuoteData) => {
+    this.quoteService.getQuote().subscribe((data: QuoteData) => {
       this.quote = data.quote;
       this.text = this.quote.quoteText;
       this.author = this.quote.quoteAuthor;

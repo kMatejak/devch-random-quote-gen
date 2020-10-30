@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
 
-import { TakenQuoteData } from '../quote';
+import { QuoteData } from '../quote';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +15,8 @@ export class QuoteService {
     private http: HttpClient,
   ) {}
 
-  /** GET quote from the server */
-  public getQuote(): Observable<TakenQuoteData> {
-    return this.http.get<TakenQuoteData>(this.randomQuoteUrl);
+  /** GET quote data from the server */
+  public getQuote(): Observable<QuoteData> {
+    return this.http.get<QuoteData>(this.randomQuoteUrl);
   }
 }

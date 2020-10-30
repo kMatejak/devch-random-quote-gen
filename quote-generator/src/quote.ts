@@ -1,4 +1,4 @@
-export interface TakenQuoteData {
+export interface QuoteData {
   statusCode: number;
   quote: {
     _id: string;
