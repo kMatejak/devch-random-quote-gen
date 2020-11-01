@@ -1,7 +1,22 @@
-<div *ngIf="quote">
-  <h2>{{ title }}</h2>
-  <button (click)="generateQuote()">random ⟳</button>
-  <div>{{ text }}</div>
-  <div>{{ author }}</div>
-  <div>{{ genre }}</div>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>QuoteGen</title>
+  </head>
+  <body>
+    <section id="page">
+      <button class="random" (click)="generateQuote()">
+        <span>random</span>
+      </button>
+      <main *ngIf="quote">
+        <div class="quote-text">{{ text }}</div>
+        <div class="quote-author">{{ author }}</div>
+        <div class="quote-genre">{{ genre }}</div>
+      </main>
+      <footer>
+        <a href="https://www.linkedin.com/in/matejak/">Kris @ matejak.com</a>
+      </footer>
+    </section>
+  </body>
+</html>

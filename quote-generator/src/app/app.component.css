@@ -1,0 +1,149 @@
+/* raleway-500 - latin-ext_latin */
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Raleway"), local("Raleway"),
+    url("../shared/fonts/raleway-v18-latin-ext_latin-500.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../shared/fonts/raleway-v18-latin-ext_latin-500.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* raleway-700 - latin-ext_latin */
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""),
+    url("../shared/fonts/raleway-v18-latin-ext_latin-700.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../shared/fonts/raleway-v18-latin-ext_latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* montserrat-regular - latin */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"),
+    url("../shared/fonts/montserrat-v15-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../shared/fonts/montserrat-v15-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html,
+body {
+  font-family: Raleway;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  background: #ffffff;
+}
+
+a {
+  text-decoration: none; /* no underline */
+}
+
+/* Page layout start */
+
+#page {
+  display: grid;
+  width: 100%;
+  height: max-content;
+  grid-template-areas:
+                      ". . r"
+                      ". m ."
+                      ". f .";
+  grid-template-columns: 1fr 614px 1fr;
+  grid-template-rows: 100px 1fr max-content;
+  border: solid black thin;
+}
+
+#page > button.random {
+  border: solid black thin;
+  grid-area: r;
+}
+
+#page > main {
+  border: solid black thin;
+  grid-area: m;
+}
+
+#page > footer {
+  border: solid black thin;
+  grid-area: f;
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  justify-content: center;
+}
+
+/* ----------------------- */
+/* ----------------------- */
+
+/* General buttons styles start */
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 0rem 0rem;
+  margin: 0;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  background: #ffffff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:focus {
+  outline: none;
+  border: none;
+}
+
+button:active {
+  transform: scale(0.983);
+}
+
+/* General buttons styles end */
+
+/* ----------------------- */
+/* ----------------------- */
+
+/* Textes styles start */
+
+button.random :first-child {
+  font-size: 1.125rem;
+  color: #4f4f4f;
+  border: solid red thin;
+}
+
+.quote-text {
+  font-size: 2.25rem;
+  color: #000000;
+  border: solid aqua thin;
+}
+
+.quote-author {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f4f4f;
+  border: solid chartreuse thin;
+}
+
+.quote-genre {
+  font-size: 0.875rem;
+  color: #828282;
+  border: solid red thin;
+}
+
+footer :first-child {
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  color: #a9a9a9;
+  border: solid red thin;
+}
+
+/* Textes styles end */
