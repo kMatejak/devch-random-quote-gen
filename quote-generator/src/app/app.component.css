@@ -6,7 +6,8 @@
   src: local("Raleway"), local("Raleway"),
     url("../shared/fonts/raleway-v18-latin-ext_latin-500.woff2") format("woff2"),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../shared/fonts/raleway-v18-latin-ext_latin-500.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("../shared/fonts/raleway-v18-latin-ext_latin-500.woff") format("woff"); 
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* raleway-700 - latin-ext_latin */
@@ -17,7 +18,8 @@
   src: local(""),
     url("../shared/fonts/raleway-v18-latin-ext_latin-700.woff2") format("woff2"),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../shared/fonts/raleway-v18-latin-ext_latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("../shared/fonts/raleway-v18-latin-ext_latin-700.woff") format("woff"); 
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* montserrat-regular - latin */
@@ -28,8 +30,13 @@
   src: local("Montserrat Regular"), local("Montserrat-Regular"),
     url("../shared/fonts/montserrat-v15-latin-regular.woff2") format("woff2"),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../shared/fonts/montserrat-v15-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("../shared/fonts/montserrat-v15-latin-regular.woff") format("woff"); 
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
+/* ----------------------- */
+/* ----------------------- */
+/* ----------------------- */
 
 html,
 body {
@@ -38,50 +45,12 @@ body {
   font-size: 16px;
   font-weight: 500;
   background: #ffffff;
+  margin: 0;
 }
 
 a {
   text-decoration: none; /* no underline */
 }
-
-/* Page layout start */
-
-#page {
-  display: grid;
-  width: 100%;
-  height: max-content;
-  grid-template-areas:
-                      ". . r"
-                      ". m ."
-                      ". f .";
-  grid-template-columns: 1fr 614px 1fr;
-  grid-template-rows: 100px 1fr max-content;
-  border: solid black thin;
-}
-
-#page > button.random {
-  border: solid black thin;
-  grid-area: r;
-}
-
-#page > main {
-  border: solid black thin;
-  grid-area: m;
-}
-
-#page > footer {
-  border: solid black thin;
-  grid-area: f;
-  display: flex;
-  flex-direction: row;
-  margin-top: auto;
-  justify-content: center;
-}
-
-/* ----------------------- */
-/* ----------------------- */
-
-/* General buttons styles start */
 
 button {
   display: inline-block;
@@ -107,8 +76,59 @@ button:active {
   transform: scale(0.983);
 }
 
-/* General buttons styles end */
+/* ----------------------- */
+/* ----------------------- */
+/* ----------------------- */
 
+/* Page layout start */
+
+#page {
+  display: grid;
+  height: 98vh;
+  grid-template-areas:
+    ". . r"
+    ". m ."
+    ". f .";
+
+  grid-template-columns: minmax(10px, 1fr) minmax(180px, 614px) minmax(50px, 1fr);
+  grid-template-rows: 100px 1fr auto;
+}
+
+#page > button.random {
+  grid-area: r;
+  display: flex;
+  justify-self: center;
+  margin-top: 2.5rem;
+  margin-right: 5rem;
+}
+
+#page > button.random :first-child {
+  margin-right: .2rem;
+  margin-top: .1rem;
+}
+
+#page > main {
+  grid-area: m;
+  margin-left: 1.5rem;
+}
+
+#page > footer {
+  grid-area: f;
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-bottom: .5rem;
+}
+
+/* ----------------------- */
+/* ----------------------- */
+/* ----------------------- */
+
+
+
+/* ----------------------- */
 /* ----------------------- */
 /* ----------------------- */
 
@@ -117,33 +137,30 @@ button:active {
 button.random :first-child {
   font-size: 1.125rem;
   color: #4f4f4f;
-  border: solid red thin;
 }
 
 .quote-text {
   font-size: 2.25rem;
   color: #000000;
-  border: solid aqua thin;
 }
 
 .quote-author {
   font-size: 1.5rem;
   font-weight: 700;
   color: #4f4f4f;
-  border: solid chartreuse thin;
+  padding-top: 1.55rem;
 }
 
 .quote-genre {
   font-size: 0.875rem;
   color: #828282;
-  border: solid red thin;
+  padding-top: .35rem;
 }
 
 footer :first-child {
   font-family: Montserrat;
   font-size: 0.875rem;
   color: #a9a9a9;
-  border: solid red thin;
 }
 
 /* Textes styles end */
