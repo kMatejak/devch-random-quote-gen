@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { QuoteData } from '../shared/models/quote-data.model';
 import { QuoteService } from './quote.service';
+import { Quote } from '../shared/models/quote.model';
+import { QuoteData } from '../shared/models/quote-data.model';
 
 @Component({
   selector: 'app-root',
@@ -9,24 +10,17 @@ import { QuoteService } from './quote.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  public title = 'Random Quote Generator';
-  public quote: QuoteData['quote'];
-  public text: string;
-  public author: string;
-  public genre: string;
+  quote: Quote;
 
   constructor(private quoteService: QuoteService) {}
 
-  generateQuote() {
-    this.quoteService.getQuote().subscribe((data: QuoteData) => {
-      this.quote = data.quote;
-      this.text = this.quote.quoteText;
-      this.author = this.quote.quoteAuthor;
-      this.genre = this.quote.quoteGenre;
+  getQuote() {
+    this.quoteService.getQuote().subscribe((data: Quote) => {
+      this.quote = data;
     });
   }
 
   ngOnInit(): void {
-    this.generateQuote();
+    this.getQuote();
   }
 }
