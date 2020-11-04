@@ -24,12 +24,11 @@ export class AppComponent implements OnInit {
   }
 
   getBillGatesQuotes() {
-    this.quote = null;
-    this.quotes = null;
-    this.quoteService.getBillGatesQuotes().subscribe((data: QuotesData) => {
+    
+    this.quoteService.getQuotesByAuthor(this.quote.author).subscribe((data: QuotesData) => {
       this.quotes = data.quotes;
-      console.log(this.quotes);
-      this.quoteAuthor = this.quotes[0].quoteAuthor;
+      this.quoteAuthor = this.quote.author;
+      this.quote = null;
     });
     
     

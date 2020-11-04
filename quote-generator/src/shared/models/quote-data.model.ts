@@ -1,10 +1,8 @@
+import { Quote } from './quote.model';
+
 export interface QuoteData {
   statusCode: number;
-  quote: {
-    quoteText: string;
-    quoteAuthor: string;
-    quoteGenre: string;
-  };
+  quote: QuoteRes;
 }
 
 export interface QuotesData {
@@ -12,5 +10,12 @@ export interface QuotesData {
   message: string;
   totalPages: number;
   currentPage: number;
-  quotes: QuoteData['quote'][];
+  quotes: Quote[];
+}
+
+
+export interface QuoteRes {
+  quoteText: string;
+  quoteAuthor: string;
+  quoteGenre: string;
 }
