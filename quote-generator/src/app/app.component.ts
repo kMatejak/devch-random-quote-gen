@@ -11,7 +11,8 @@ import { QuotesData } from '../shared/models/quote-data.model';
 })
 export class AppComponent implements OnInit {
   quote: Quote;
-  quotes: any; 
+  quotes: any;
+  quoteAuthor: string;
 
   constructor(private quoteService: QuoteService) {}
 
@@ -24,9 +25,14 @@ export class AppComponent implements OnInit {
 
   getBillGatesQuotes() {
     this.quote = null;
+    this.quotes = null;
     this.quoteService.getBillGatesQuotes().subscribe((data: QuotesData) => {
       this.quotes = data.quotes;
+      console.log(this.quotes);
+      this.quoteAuthor = this.quotes[0].quoteAuthor;
     });
+    
+    
   }
 
   ngOnInit(): void {

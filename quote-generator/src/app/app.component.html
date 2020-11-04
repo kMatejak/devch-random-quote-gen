@@ -6,18 +6,26 @@
   <main>
     <section *ngIf="quote">
       <div class="quote-text">{{ quote.text }}</div>
-      <div class="quote-author" (click)="getBillGatesQuotes()">{{ quote.author }}</div>
+      <div class="quote-author" (click)="getBillGatesQuotes()">
+        {{ quote.author }}
+      </div>
       <div class="quote-genre">{{ quote.genre }}</div>
       <br />
       <br />
     </section>
-    <section *ngFor="let q of quotes">
-      <div class="quote-text">{{ q.quoteText }}</div>
-      <div class="quote-author">{{ q.quoteAuthor }}</div>
-      <div class="quote-genre">{{ q.quoteGenre }}</div>
+    <section *ngIf="quotes">
+      <div class="quote-author" (click)="getBillGatesQuotes()">
+        {{ quoteAuthor }}
+      </div>
       <br />
       <br />
-      <br />
+      <div *ngFor="let q of quotes">
+        <div class="quote-text">{{ q.quoteText }}</div>
+        <div class="quote-genre">{{ q.quoteGenre }}</div>
+        <br />
+        <br />
+        <br />
+      </div>
     </section>
   </main>
   <footer>
