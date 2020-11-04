@@ -8,3 +8,31 @@ body {
   background: #FFFFFF;
   margin: 0;
 }
+
+a {
+  text-decoration: none; /* no underline */
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 0rem 0rem;
+  margin: 0;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  background: #FFFFFF;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:focus {
+  outline: none;
+  border: none;
+}
+
+button:active {
+  transform: scale(0.983);
+}

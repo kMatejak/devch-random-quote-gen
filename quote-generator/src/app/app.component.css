@@ -40,40 +40,6 @@
 /* ----------------------- */
 /* ----------------------- */
 
-a {
-  text-decoration: none; /* no underline */
-}
-
-button {
-  display: inline-block;
-  border: none;
-  padding: 0rem 0rem;
-  margin: 0;
-  text-decoration: none;
-  font-size: 1rem;
-  line-height: 1;
-  cursor: pointer;
-  text-align: center;
-  background: #FFFFFF;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-button:focus {
-  outline: none;
-  border: none;
-}
-
-button:active {
-  transform: scale(0.983);
-}
-
-/* ----------------------- */
-/* ----------------------- */
-/* ----------------------- */
-/* ----------------------- */
-/* ----------------------- */
-
 /* Page layout start */
 
 #page {
@@ -139,6 +105,10 @@ button.random :first-child {
   font-weight: 700;
   color: #4f4f4f;
   padding-top: 1.55rem;
+}
+
+.quote-author:hover {
+  cursor: pointer;
 }
 
 .quote-genre {

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { QuoteData } from '../shared/models/quote-data.model';
+import { QuoteData, QuotesData } from '../shared/models/quote-data.model';
 import { Quote } from '../shared/models/quote.model';
 
 @Injectable({
@@ -31,7 +31,12 @@ export class QuoteService {
   }
 
   // GET quote list by author (max 10)
-  getBillGatesQuotes(): Observable<Quote[]> {
-    return;
+  getBillGatesQuotes(): Observable<QuotesData> {
+    return this.http.get<QuotesData>(this.billGatesQuotesUrl);
   }
+
+
+
+
+
 }
