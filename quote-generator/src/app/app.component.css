@@ -76,8 +76,14 @@ button.random :last-child {
   color: #4f4f4f;
 }
 
-.quote-author:hover {
+.quote-box:hover {
   cursor: pointer;
+  background-color: #333333;
+}
+
+.quote-author:hover {
+  color: aqua;
+
 }
 
 .quote-author-box {
@@ -97,8 +103,12 @@ button.random :last-child {
   margin-left: -1.875rem;
 }
 
-.quote-arrow {
-  padding: .5rem 0 0 19.5rem;
+.quote-box > .quote-arrow {
+  flex-grow: 1;
+  text-align: end; 
+  padding-top: 0.5rem;
+  margin-right: 3.5rem;
+  color: #ffffff;
 }
 
 /* Quotes list styling start */
