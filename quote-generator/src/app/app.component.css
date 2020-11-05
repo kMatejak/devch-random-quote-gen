@@ -1,3 +1,5 @@
+/* ROOT FONT SIZE --- 16px */
+
 /* Page layout start */
 
 #page {
@@ -7,11 +9,11 @@
     ". . r"
     ". m ."
     ". f .";
-  grid-template-columns: 
-      minmax(0.625rem, 1fr) 
-      minmax(11.25rem, 38.375rem) 
-      minmax(3.125rem, 1fr);
-  grid-template-rows: 6.25rem 1fr auto;
+  grid-template-columns:
+    minmax(0.625rem, 1fr)
+    minmax(11.25rem, 38.375rem)
+    minmax(3.125rem, 1fr);
+  grid-template-rows: 12.5rem 1fr auto;
 }
 
 #page > button.random {
@@ -24,25 +26,12 @@
 
 #page > button.random :first-child {
   margin-right: 0.2rem;
-  margin-top: 0.1rem;
 }
 
 #page > main {
   grid-area: m;
   margin-left: 1.5rem;
   margin-bottom: 1.5rem;
-}
-
-/* margin and padding for left border line */
-.quote-text {
-  padding-left: 3.125rem;
-  margin-left: -3.625rem;
-}
-
-/*  space between quote text and author in single view 
-    or quote genre in list view  */
-.quote-author-box {
-  padding-top: 1rem;
 }
 
 #page > footer {
@@ -68,11 +57,17 @@ button.random :first-child {
   color: #4f4f4f;
 }
 
+button.random :last-child {
+  height: 1.125rem;
+  width: 1.125rem;
+}
+
 .quote-text {
   font-size: 2.25rem;
   color: #000000;
-  border-left: .5rem solid #f7df94;
-
+  border-left: 0.5rem solid #f7df94;
+  padding-left: 3.125rem;
+  margin-left: -3.625rem;
 }
 
 .quote-author {
@@ -85,10 +80,27 @@ button.random :first-child {
   cursor: pointer;
 }
 
+.quote-author-box {
+  padding-top: 2rem;
+}
+
 .quote-genre {
   font-size: 0.875rem;
   color: #828282;
-  /* padding-top: 0.35rem; */
+  padding-top: 0.5rem;
+}
+
+.quote-list-author {
+  font-size: 2.25rem;
+  color: #333333;
+}
+
+.quote-list-author:hover {
+  cursor: unset;
+}
+
+.quote-list-element {
+  margin-top: 8.75rem;
 }
 
 footer :first-child {

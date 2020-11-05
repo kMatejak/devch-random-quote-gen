@@ -12,23 +12,13 @@
         </div>
         <div class="quote-genre">{{ quote.genre }}</div>
       </div>
-      <br />
-      <br />
     </section>
     <section *ngIf="quotes">
-      <div class="quote-author" (click)="getBillGatesQuotes()">
+      <div class="quote-author quote-list-author" (click)="getBillGatesQuotes()">
         {{ quoteAuthor }}
       </div>
-      <br />
-      <br />
       <div *ngFor="let q of quotes">
-        <div class="quote-text">{{ q.quoteText }}</div>
-        <div class="quote-author-box">
-          <div class="quote-genre">{{ q.quoteGenre }}</div>
-        </div>
-        <br />
-        <br />
-        <br />
+        <div class="quote-text quote-list-element">{{ q.quoteText }}</div>
       </div>
     </section>
   </main>
