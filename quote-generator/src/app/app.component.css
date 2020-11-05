@@ -81,7 +81,7 @@ button.random :last-child {
 }
 
 .quote-author-box {
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
 }
 
 .quote-genre {
@@ -89,6 +89,19 @@ button.random :last-child {
   color: #828282;
   padding-top: 0.5rem;
 }
+
+.quote-box {
+  display: flex;
+  padding: 3.125rem 0rem 4.625rem 1.875rem;
+  margin-top: 2rem;
+  margin-left: -1.875rem;
+}
+
+.quote-arrow {
+  padding: .5rem 0 0 19.5rem;
+}
+
+/* Quotes list styling start */
 
 .quote-list-author {
   font-size: 2.25rem;
@@ -103,10 +116,20 @@ button.random :last-child {
   margin-top: 8.75rem;
 }
 
+/* List styling start */
+
+/* ----------------------- */
+/* ----------------------- */
+/* ----------------------- */
+/* ----------------------- */
+/* ----------------------- */
+
+/* Footer styling start */
+
 footer :first-child {
   font-family: Montserrat;
   font-size: 0.875rem;
   color: #a9a9a9;
 }
 
-/* Textes styles end */
+/* Footer styling end */
