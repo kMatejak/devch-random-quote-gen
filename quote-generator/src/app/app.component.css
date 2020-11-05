@@ -76,18 +76,20 @@ button.random :last-child {
   color: #4f4f4f;
 }
 
-.quote-box:hover {
+.quote-box {
   cursor: pointer;
-  background-color: #333333;
 }
 
-.quote-author:hover {
-  color: aqua;
-
+.quote-box:hover {
+  background-color: #333333;  
 }
 
-.quote-author-box {
-  /* padding-top: 2rem; */
+.quote-box:hover .quote-author {
+  color: #F2F2F2;
+}
+
+.quote-box:hover .quote-arrow {
+  color: #F2F2F2;
 }
 
 .quote-genre {
@@ -105,7 +107,7 @@ button.random :last-child {
 
 .quote-box > .quote-arrow {
   flex-grow: 1;
-  text-align: end; 
+  text-align: end;
   padding-top: 0.5rem;
   margin-right: 3.5rem;
   color: #ffffff;
