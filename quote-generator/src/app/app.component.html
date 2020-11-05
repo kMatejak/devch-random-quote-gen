@@ -6,7 +6,7 @@
   <main>
     <section *ngIf="quote">
       <div class="quote-text">{{ quote.text }}</div>
-      <div class="quote-below-text">
+      <div class="quote-author-box">
         <div class="quote-author" (click)="getBillGatesQuotes()">
           {{ quote.author }}
         </div>
@@ -23,7 +23,7 @@
       <br />
       <div *ngFor="let q of quotes">
         <div class="quote-text">{{ q.quoteText }}</div>
-        <div class="quote-below-text">
+        <div class="quote-author-box">
           <div class="quote-genre">{{ q.quoteGenre }}</div>
         </div>
         <br />

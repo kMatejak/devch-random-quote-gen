@@ -7,12 +7,11 @@
     ". . r"
     ". m ."
     ". f .";
-
-  grid-template-columns: minmax(10px, 1fr) minmax(180px, 614px) minmax(
-      50px,
-      1fr
-    );
-  grid-template-rows: 100px 1fr auto;
+  grid-template-columns: 
+      minmax(0.625rem, 1fr) 
+      minmax(11.25rem, 38.375rem) 
+      minmax(3.125rem, 1fr);
+  grid-template-rows: 6.25rem 1fr auto;
 }
 
 #page > button.random {
@@ -31,6 +30,19 @@
 #page > main {
   grid-area: m;
   margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* margin and padding for left border line */
+.quote-text {
+  padding-left: 3.125rem;
+  margin-left: -3.625rem;
+}
+
+/*  space between quote text and author in single view 
+    or quote genre in list view  */
+.quote-author-box {
+  padding-top: 1rem;
 }
 
 #page > footer {
@@ -59,13 +71,8 @@ button.random :first-child {
 .quote-text {
   font-size: 2.25rem;
   color: #000000;
-  border-left: 10px solid #f7df94;
-  padding-left: 30px;
-  margin-left: -50px;
-}
+  border-left: .5rem solid #f7df94;
 
-.quote-below-text {
-  padding-top: 1.55rem;
 }
 
 .quote-author {
@@ -81,7 +88,7 @@ button.random :first-child {
 .quote-genre {
   font-size: 0.875rem;
   color: #828282;
-  padding-top: 0.35rem;
+  /* padding-top: 0.35rem; */
 }
 
 footer :first-child {
