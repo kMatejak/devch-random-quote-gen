@@ -12,7 +12,6 @@ import { Quote } from '../shared/models/quote.model';
 export class QuoteService {
   // URLs to web api
   private randomQuoteUrl = 'https://quote-garden.herokuapp.com/api/v2/quotes/random';
-  private billGatesQuotesUrl = 'https://quote-garden.herokuapp.com/api/v2/authors/Bill%20Gates?page=1&limit=10';
   private authorQuotesUrl =  'https://quote-garden.herokuapp.com/api/v2/authors';
 
   constructor(private http: HttpClient) {}
@@ -32,17 +31,8 @@ export class QuoteService {
   }
 
   // GET quote list by author (max 10)
-  getBillGatesQuotes(): Observable<QuotesData> {
-    return this.http.get<QuotesData>(this.billGatesQuotesUrl);
-  }
-
-
   getQuotesByAuthor(author: string): Observable<any> {
     return this.http.get<QuotesData>(`${this.authorQuotesUrl}/${author}?page=1&limit=10`);
   }
-
-
-
-
 
 }

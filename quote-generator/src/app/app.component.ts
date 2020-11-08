@@ -23,15 +23,12 @@ export class AppComponent implements OnInit {
     });
   }
 
-  getBillGatesQuotes() {
-    
-    this.quoteService.getQuotesByAuthor(this.quote.author).subscribe((data: QuotesData) => {
+  getQuotesByAuthor(author: string) { 
+    this.quoteService.getQuotesByAuthor(author).subscribe((data: QuotesData) => {
       this.quotes = data.quotes;
       this.quoteAuthor = this.quote.author;
       this.quote = null;
     });
-    
-    
   }
 
   ngOnInit(): void {

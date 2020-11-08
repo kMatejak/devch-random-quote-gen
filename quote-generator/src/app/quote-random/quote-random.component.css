@@ -1,0 +1,63 @@
+.quote-text {
+  font-size: 2.25rem;
+  color: #000000;
+  border-left: 0.5rem solid #f7df94;
+  padding-left: 3.125rem;
+  margin-left: -3.625rem;
+}
+
+.quote-author {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f4f4f;
+}
+
+.quote-box {
+  cursor: pointer;
+}
+
+.quote-box:hover {
+  background-color: #333333;
+}
+
+.quote-box:hover .quote-author {
+  color: #f2f2f2;
+}
+
+.quote-box:hover .quote-arrow {
+  color: #f2f2f2;
+}
+
+.quote-genre {
+  font-size: 0.875rem;
+  color: #828282;
+  padding-top: 0.5rem;
+}
+
+.quote-box {
+  display: flex;
+  padding: 3.125rem 0rem 4.625rem 1.875rem;
+  margin-top: 2rem;
+  margin-left: -1.875rem;
+}
+
+.quote-box > .quote-arrow {
+  flex-grow: 1;
+  text-align: end;
+  padding-top: 0.5rem;
+  margin-right: 3.5rem;
+  color: #ffffff;
+}
+
+.quote-list-author {
+  font-size: 2.25rem;
+  color: #333333;
+}
+
+.quote-list-author:hover {
+  cursor: unset;
+}
+
+.quote-list-element {
+  margin-top: 8.75rem;
+}

@@ -4,33 +4,17 @@
     <img src="../assets/round-arrows-20x20.png" />
   </button>
   <main>
-    <section *ngIf="quote">
-      <div class="quote-text">{{ quote.text }}</div>
-      
-      <div class="quote-box" for="author-box" (click)="getBillGatesQuotes()">
 
-        <div class="quote-author-box">
-          <div class="quote-author">
-            {{ quote.author }}
-          </div>
-          <div class="quote-genre">{{ quote.genre }}</div>
-        </div>
+    <quote-random
+      [quote]="quote"
+      (getQuotesByAuthorEvent)="getQuotesByAuthor($event)"
+    ></quote-random>
 
-        <div class="quote-arrow">>>></div>
-      </div>
+    <quote-list 
+      [quotes]="quotes" 
+      [quoteAuthor]="quoteAuthor"
+    ></quote-list>
 
-    </section>
-    <section *ngIf="quotes">
-      <div
-        class="quote-author quote-list-author"
-        (click)="getBillGatesQuotes()"
-      >
-        {{ quoteAuthor }}
-      </div>
-      <div *ngFor="let q of quotes">
-        <div class="quote-text quote-list-element">{{ q.quoteText }}</div>
-      </div>
-    </section>
   </main>
   <footer>
     <a href="https://www.linkedin.com/in/matejak/">Kris @ matejak.com</a>
