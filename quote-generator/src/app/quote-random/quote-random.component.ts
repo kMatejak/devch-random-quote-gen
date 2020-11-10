@@ -5,7 +5,7 @@ import { Quote } from '../../shared/models/quote.model';
 @Component({
   selector: 'quote-random',
   templateUrl: './quote-random.component.html',
-  styleUrls: ['./quote-random.component.css']
+  styleUrls: ['../app.component.css', './quote-random.component.css'],
 })
 export class QuoteRandomComponent {
   @Input() quote: Quote;
@@ -14,5 +14,4 @@ export class QuoteRandomComponent {
   getQuotesByAuthor() {
     this.getQuotesByAuthorEvent.emit(this.quote.author);
   }
-
 }

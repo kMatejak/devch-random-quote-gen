@@ -1,9 +1,9 @@
-import { Quote } from './quote.model';
+import { QuoteRes } from './quote-res.model';
 
 export interface QuotesData {
   statusCode: number;
   message: string;
   totalPages: number;
   currentPage: number;
-  quotes: Quote[];
+  quotes: QuoteRes[];
 }

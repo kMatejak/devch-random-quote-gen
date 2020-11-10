@@ -1,17 +1,3 @@
-.quote-text {
-  font-size: 2.25rem;
-  color: #000000;
-  border-left: 0.5rem solid #f7df94;
-  padding-left: 3.125rem;
-  margin-left: -3.625rem;
-}
-
-.quote-author {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #4f4f4f;
-}
-
 .quote-box {
   cursor: pointer;
 }
@@ -47,17 +33,4 @@
   padding-top: 0.5rem;
   margin-right: 3.5rem;
   color: #ffffff;
-}
-
-.quote-list-author {
-  font-size: 2.25rem;
-  color: #333333;
-}
-
-.quote-list-author:hover {
-  cursor: unset;
-}
-
-.quote-list-element {
-  margin-top: 8.75rem;
 }

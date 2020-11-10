@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { QuoteService } from './quote.service';
 import { Quote } from '../shared/models/quote.model';
-import { QuotesData } from '../shared/models/quote-data.model';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +10,7 @@ import { QuotesData } from '../shared/models/quote-data.model';
 })
 export class AppComponent implements OnInit {
   quote: Quote;
-  quotes: any;
+  quotes: Quote[];
   quoteAuthor: string;
 
   constructor(private quoteService: QuoteService) {}
@@ -23,9 +22,9 @@ export class AppComponent implements OnInit {
     });
   }
 
-  getQuotesByAuthor(author: string) { 
-    this.quoteService.getQuotesByAuthor(author).subscribe((data: QuotesData) => {
-      this.quotes = data.quotes;
+  getQuotesByAuthor(author: string) {
+    this.quoteService.getQuotesByAuthor(author).subscribe((quotes: Quote[]) => {
+      this.quotes = quotes;
       this.quoteAuthor = this.quote.author;
       this.quote = null;
     });

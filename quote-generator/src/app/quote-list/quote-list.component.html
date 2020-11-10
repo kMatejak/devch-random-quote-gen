@@ -2,7 +2,7 @@
   <div class="quote-author quote-list-author">
     {{ quoteAuthor }}
   </div>
-  <div *ngFor="let q of quotes">
-    <div class="quote-text quote-list-element">{{ q.quoteText }}</div>
+  <div *ngFor="let quote of quotes">
+    <div class="quote-text quote-list-element">{{ quote.text }}</div>
   </div>
 </section>
