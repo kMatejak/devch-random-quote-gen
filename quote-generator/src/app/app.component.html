@@ -1,20 +1,12 @@
 <section id="page">
-  <button class="random" (click)="getQuote()">
+  <button class="random" (click)="randomizeQuote()">
     <span>random</span>
     <img src="../assets/round-arrows-20x20.png" />
   </button>
   <main>
 
-    <quote-random
-      [quote]="quote"
-      (getQuotesByAuthorEvent)="getQuotesByAuthor($event)"
-    ></quote-random>
+    <router-outlet></router-outlet>
 
-    <quote-list 
-      [quotes]="quotes" 
-      [quoteAuthor]="quoteAuthor"
-    ></quote-list>
-    
   </main>
   <footer>
     <a href="https://www.linkedin.com/in/matejak/">Kris @ matejak.com</a>
