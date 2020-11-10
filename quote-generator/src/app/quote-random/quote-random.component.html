@@ -1,0 +1,12 @@
+<section *ngIf="quote">
+  <div class="quote-text">{{ quote.text }}</div>
+  <div class="quote-box" for="author-box" (click)="getQuotesByAuthor()">
+    <div class="quote-author-box">
+      <div class="quote-author">
+        {{ quote.author }}
+      </div>
+      <div class="quote-genre">{{ quote.genre }}</div>
+    </div>
+    <div class="quote-arrow">>>></div>
+  </div>
+</section>

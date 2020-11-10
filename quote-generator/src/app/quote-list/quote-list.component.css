@@ -1,0 +1,12 @@
+.quote-list-author {
+  font-size: 2.25rem;
+  color: #333333;
+}
+
+.quote-list-author:hover {
+  cursor: unset;
+}
+
+.quote-list-element {
+  margin-top: 8.75rem;
+}

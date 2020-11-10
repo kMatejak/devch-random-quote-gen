@@ -1,9 +1,6 @@
+import { QuoteRes } from './quote-res.model';
+
 export interface QuoteData {
   statusCode: number;
-  quote: {
-    _id: string;
-    quoteText: string;
-    quoteAuthor: string;
-    quoteGenre: string;
-  };
+  quote: QuoteRes;
 }

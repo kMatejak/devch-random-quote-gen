@@ -3,10 +3,18 @@
     <span>random</span>
     <img src="../assets/round-arrows-20x20.png" />
   </button>
-  <main *ngIf="quote">
-    <div class="quote-text">{{ quote.text }}</div>
-    <div class="quote-author">{{ quote.author }}</div>
-    <div class="quote-genre">{{ quote.genre }}</div>
+  <main>
+
+    <quote-random
+      [quote]="quote"
+      (getQuotesByAuthorEvent)="getQuotesByAuthor($event)"
+    ></quote-random>
+
+    <quote-list 
+      [quotes]="quotes" 
+      [quoteAuthor]="quoteAuthor"
+    ></quote-list>
+    
   </main>
   <footer>
     <a href="https://www.linkedin.com/in/matejak/">Kris @ matejak.com</a>
