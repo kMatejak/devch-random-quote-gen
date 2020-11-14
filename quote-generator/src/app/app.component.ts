@@ -9,9 +9,10 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  constructor(public quoteService: QuoteService,
-              private router: Router,
-              ) {}
+  constructor(
+    public quoteService: QuoteService,
+    private router: Router,
+  ) {}
 
   randomizeQuote(): void {
     this.router.navigate(['../']);

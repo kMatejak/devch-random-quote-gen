@@ -11,18 +11,16 @@ import { Observable } from 'rxjs';
   styleUrls: ['../app.component.css', './quote-list.component.css'],
 })
 export class QuoteListComponent implements OnInit {
-
   quotes$: Observable<Quote[]>;
   quoteAuthor: string;
 
-  constructor(private route: ActivatedRoute,
-              private quoteService: QuoteService,
-              ) {
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private quoteService: QuoteService
+  ) {}
 
   ngOnInit(): void {
-    this.route.params
-      .subscribe(params => {
+    this.route.params.subscribe((params) => {
       this.quoteAuthor = params.author;
       this.quotes$ = this.quoteService.getQuotesByAuthor(this.quoteAuthor);
     });

@@ -11,12 +11,13 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['../app.component.css', './quote-random.component.css'],
 })
 export class QuoteRandomComponent implements OnInit, OnDestroy {
-
+  
   quote: Quote;
   destroy$ = new EventEmitter<boolean>();
 
-  constructor(public quoteService: QuoteService,
-              private router: Router
+  constructor(
+    public quoteService: QuoteService, 
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -27,7 +28,7 @@ export class QuoteRandomComponent implements OnInit, OnDestroy {
         if (!data) {
           this.quoteService.randomizeQuote();
         }
-    });
+      });
   }
 
   getQuotesByAuthor(): void {

@@ -6,16 +6,16 @@ import { QuoteListComponent } from './quote-list/quote-list.component';
 const routes: Routes = [
   {
     path: '',
-    component: QuoteRandomComponent
+    component: QuoteRandomComponent,
   },
   {
     path: 'list/:author',
-    component: QuoteListComponent
-  }
+    component: QuoteListComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

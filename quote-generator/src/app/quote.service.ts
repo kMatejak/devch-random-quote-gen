@@ -6,14 +6,12 @@ import { map } from 'rxjs/operators';
 import { QuoteData } from '../shared/models/quote-data.model';
 import { QuotesData } from '../shared/models/quotes-data.model';
 import { Quote } from '../shared/models/quote.model';
-
 import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class QuoteService {
-
   quote$ = new BehaviorSubject<Quote>(null);
 
   constructor(private http: HttpClient) {}
@@ -29,8 +27,9 @@ export class QuoteService {
             author: quote.quoteAuthor,
             genre: quote.quoteGenre,
           };
-        }),
-      ).subscribe(quote => this.quote$.next(quote));
+        })
+      )
+      .subscribe((quote) => this.quote$.next(quote));
   }
 
   getQuotesByAuthor(author: string): Observable<Quote[]> {
