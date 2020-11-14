@@ -4,7 +4,7 @@
 </div>
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://quote-genn.netlify.app/">
       Demo
     </a>
     <span> | </span>
@@ -33,7 +33,7 @@
 ![screenshot-01](./resources/page-view-00.png)  
 ![screenshot-02](./resources/page-view-01.png)  
   
-You can see a live demo of my app [**here**](https://google.com/). Before I started working on this project, my knowledge of Angular was close to zero. I learned things like:  
+You can see a live demo of my app [**here**](https://quote-genn.netlify.app/). Before I started working on this project, my knowledge of Angular was close to zero. I learned things like:  
   
 - CSS! Grid and Flex,
 - Components! Breaking down Angular applications into components,
