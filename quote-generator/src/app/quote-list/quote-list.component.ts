@@ -1,6 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Quote } from '../../shared/models/quote.model';
+import { ActivatedRoute } from '@angular/router';
+import { QuoteService } from '../quote.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'quote-list',
@@ -8,8 +11,20 @@ import { Quote } from '../../shared/models/quote.model';
   styleUrls: ['../app.component.css', './quote-list.component.css'],
 })
 export class QuoteListComponent implements OnInit {
-  @Input() quotes: Quote[];
-  @Input() quoteAuthor: string;
 
-  ngOnInit(): void {}
+  quotes$: Observable<Quote[]>;
+  quoteAuthor: string;
+
+  constructor(private route: ActivatedRoute,
+              private quoteService: QuoteService,
+              ) {
+  }
+
+  ngOnInit(): void {
+    this.route.params
+      .subscribe(params => {
+      this.quoteAuthor = params.author;
+      this.quotes$ = this.quoteService.getQuotesByAuthor(this.quoteAuthor);
+    });
+  }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { QuoteData } from '../shared/models/quote-data.model';
@@ -13,16 +13,14 @@ import { environment } from '../environments/environment';
   providedIn: 'root',
 })
 export class QuoteService {
-  // URL fragments to web api
-  private randomQuoteUrl = 'quotes/random';
-  private authorQuotesUrl = 'authors';
+
+  quote$ = new BehaviorSubject<Quote>(null);
 
   constructor(private http: HttpClient) {}
 
-  // GET quote data from the server
-  getQuote(): Observable<Quote> {
-    return this.http
-      .get<QuoteData>(`${environment.apiUrl}/${this.randomQuoteUrl}`)
+  randomizeQuote(): void {
+    this.http
+      .get<QuoteData>(`${environment.apiUrl}/quotes/random`)
       .pipe(
         map((quoteData) => {
           const { quote } = quoteData;
@@ -31,15 +29,14 @@ export class QuoteService {
             author: quote.quoteAuthor,
             genre: quote.quoteGenre,
           };
-        })
-      );
+        }),
+      ).subscribe(quote => this.quote$.next(quote));
   }
 
-  // GET quote list by author (max 10)
   getQuotesByAuthor(author: string): Observable<Quote[]> {
     return this.http
       .get<QuotesData>(
-        `${environment.apiUrl}/${this.authorQuotesUrl}/${author}?page=1&limit=10`
+        `${environment.apiUrl}/authors/${author}?page=1&limit=10`
       )
       .pipe(
         map((quotesData) => {
