@@ -16,5 +16,6 @@ export class AppComponent {
 
   randomizeQuote(): void {
     this.router.navigate(['../']);
+    this.quoteService.randomizeQuote();
   }
 }

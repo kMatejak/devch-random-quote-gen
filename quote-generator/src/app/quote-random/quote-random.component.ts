@@ -24,10 +24,10 @@ export class QuoteRandomComponent implements OnInit, OnDestroy {
     this.quoteService.quote$
       .pipe(takeUntil(this.destroy$))
       .subscribe((data: Quote) => {
-        this.quote = data;
         if (!data) {
           this.quoteService.randomizeQuote();
         }
+        this.quote = data;
       });
   }
 
