@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://quote-garden.herokuapp.com/api/v2'
+  apiUrl: 'https://quote-garden.herokuapp.com/api/v3'
 };
 
 /*

@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { QuoteData } from '../shared/models/quote-data.model';
 import { QuotesData } from '../shared/models/quotes-data.model';
 import { Quote } from '../shared/models/quote.model';
 import { environment } from '../environments/environment';
@@ -18,29 +17,31 @@ export class QuoteService {
 
   randomizeQuote(): void {
     this.http
-      .get<QuoteData>(`${environment.apiUrl}/quotes/random`)
+      .get<QuotesData>(`${environment.apiUrl}/quotes/random`)
       .pipe(
-        map((quoteData) => {
-          const { quote } = quoteData;
-          return {
-            text: quote.quoteText,
-            author: quote.quoteAuthor,
-            genre: quote.quoteGenre,
-          };
+        map((quotesData) => {
+          const { data } = quotesData;
+          return data.map((quote) => {
+            return {
+              text: quote.quoteText,
+              author: quote.quoteAuthor,
+              genre: quote.quoteGenre,
+            };
+          });
         })
       )
-      .subscribe((quote) => this.quote$.next(quote));
+      .subscribe((quotes) => this.quote$.next(quotes[0]));  // it always comes with a single-element array 
   }
 
   getQuotesByAuthor(author: string): Observable<Quote[]> {
     return this.http
       .get<QuotesData>(
-        `${environment.apiUrl}/authors/${author}?page=1&limit=10`
+        `${environment.apiUrl}/quotes?author=${author}&limit=10`
       )
       .pipe(
         map((quotesData) => {
-          const { quotes } = quotesData;
-          return quotes.map((quote) => {
+          const { data } = quotesData;
+          return data.map((quote) => {
             return {
               text: quote.quoteText,
               author: quote.quoteAuthor,

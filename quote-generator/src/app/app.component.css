@@ -13,7 +13,7 @@
     minmax(0.625rem, 1fr)
     minmax(11.25rem, 38.375rem)
     minmax(3.125rem, 1fr);
-  grid-template-rows: 12.5rem 1fr auto;
+  grid-template-rows: 12.5rem 1fr 8.5rem;
 }
 
 #page > button.random {

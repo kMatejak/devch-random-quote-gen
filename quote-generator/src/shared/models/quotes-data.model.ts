@@ -3,7 +3,11 @@ import { QuoteRes } from './quote-res.model';
 export interface QuotesData {
   statusCode: number;
   message: string;
-  totalPages: number;
-  currentPage: number;
-  quotes: QuoteRes[];
+  pagination: {
+    currentPage: number,
+    nextPage: number,
+    totalPages: number,
+  };
+  totalQuotes: number;
+  data: QuoteRes[];
 }
