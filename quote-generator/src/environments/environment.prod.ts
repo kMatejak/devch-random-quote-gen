@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://quote-garden.herokuapp.com/api/v3',
+  apiUrl: 'https://quote-garden.onrender.com/api/v3',
 };
